@@ -1,0 +1,11 @@
+ersion: '2.1'
+
+services:
+  golang:
+    image: mygolang
+    container_name: mygolang
+    build: .
+    volumes: 
+      - ./:/go/src/github.com/funabashi800
+    ports:
+      - 3000:3000

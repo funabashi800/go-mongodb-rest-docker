@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  server:
+    container_name: todoserver
+    build: .
+    tty: true
+    volumes: 
+      - ./:/go/src/github.com/funabashi800/todoapp
+    ports:
+      - 3001:3001
+    links: 
+      - mongo
+  mongo:
+    image: mongo:latest
+    container_name: tododb
+    ports: 
+      - 27001:27001
+
